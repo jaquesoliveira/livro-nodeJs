@@ -9,8 +9,6 @@ app.get('/', function (req, res) {
     res.json({'name': 'Jaques Oliveira', 'e-mail':'jaques.oliveira@gmail.com'});
 });
 
-
-
 app.use(methodOverride('X-HTTP-Method'));
 app.use(methodOverride('X-HTTP-Method-override'));
 app.use(methodOverride('X-Method-override'));
