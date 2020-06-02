@@ -1,9 +1,9 @@
 var mongojs = require('mongojs'),
-    config = require('mongojs'),
-    debug = require('debug')('livro_nodejs');
+    config = require('config'),
+    debug = require('debug')('livro_nodejs:db');
     'use strict';
 
-    function _conection(){
+    function _connection(){
         var username = config.get('mongo.username'),
         password = config.get('mongo.password'),
         server = config.get('mongo.server'),
@@ -15,6 +15,7 @@ var mongojs = require('mongojs'),
     }
 
     var db = mongojs(_connection());
+
     db.on('error', function(err){
         debug(err);
     });
